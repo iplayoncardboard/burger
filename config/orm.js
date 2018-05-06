@@ -9,10 +9,12 @@ let orm = {
         });
     },
     //takes an array values and a table name
-    insertOne: (value,cb)=>{
-        let queryString = 'INSERT INTO burgers (burger_name, devoured) VALUES (??,FALSE)'
+    insertOne:(value,cb)=>{
+        let queryString = 'INSERT INTO burgers (burger_name, devoured) VALUES (?,false)'
         connection.query(queryString,[value],(err, data)=>{
-            if(err) throw err;
+            if(err){
+                console.log('ORM ERROR: '+ err)
+            } 
             cb(data);
         });
 

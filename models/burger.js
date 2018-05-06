@@ -7,13 +7,12 @@ let burger = {
         });
     },
     make: (value, hollaBack) => {
-        orm.insertOne(values, (res)=>{
+        console.log('MakeValue: '+ value);
+        orm.insertOne(value, (res)=>{
             hollaBack(res);
         });
     }
 
 }
-
-
 
 module.exports= burger;
