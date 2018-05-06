@@ -5,6 +5,11 @@ let burger = {
         orm.selectAll('burgers', (res)=>{
             hollaBack(res);
         });
+    },
+    make: (value, hollaBack) => {
+        orm.insertOne(values, (res)=>{
+            hollaBack(res);
+        });
     }
 
 }

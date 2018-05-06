@@ -14,5 +14,9 @@ router.get('/', (req,res) => {
     
 });
 
+router.post('/api/burgers', (req,res)=>{
+
+});
+
 
 module.exports = router;

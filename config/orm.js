@@ -9,9 +9,13 @@ let orm = {
         });
     },
     //takes an array values and a table name
-    insertOne: (table,values)=>{
-        let queryString = 'INSERT INTO ?? (burger_name, devoured) VALUES (?,?)'
-        connection.query(queryString,[table,values[0],values[1]]);
+    insertOne: (value,cb)=>{
+        let queryString = 'INSERT INTO burgers (burger_name, devoured) VALUES (??,FALSE)'
+        connection.query(queryString,[value],(err, data)=>{
+            if(err) throw err;
+            cb(data);
+        });
+
     },
     updateOne: (table,column,burger, devoured,id) => {
         let queryString = "UPDATE ?? SET burger_name = ??, devoured = ?? WHERE id = ??"
