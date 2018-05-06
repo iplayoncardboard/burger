@@ -1,13 +1,25 @@
 <h1>Léon's Hit List</h1>
-
+   <div>
+        <ul> 
+            {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block }}
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    <div>
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/devour-block }}
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
 <form>
     <textarea name='item'> </textarea>
     <button>Shoot!</button>
-
-        {{#each burgers}}
-            {{#unless devoured}}
-            {{> burgers/burger-block}}
-        {{/unless}}
-        {{/each}}
+     
 </form>
 
