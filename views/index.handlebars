@@ -1,2 +1,13 @@
+<h1>Léon's Hit List</h1>
 
+<form>
+    <textarea name='item'> </textarea>
+    <button>Shoot!</button>
+
+        {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block}}
+        {{/unless}}
+        {{/each}}
+</form>
 

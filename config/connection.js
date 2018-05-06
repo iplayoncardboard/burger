@@ -1,4 +1,4 @@
-const mysql = reuire('mysql');
+const mysql = require('mysql');
 
 let connection = mysql.createConnection({
     host     : 'localhost',

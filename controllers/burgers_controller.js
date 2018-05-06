@@ -1,14 +1,18 @@
 const express = require('express');
 const burger = require('../models/burger');
 
-let app = express();
+let router = express.Router();
 
-let router = {
-    // /index get route
-
-    //index post route to add a burger
-
-}
+router.get('/', (req,res) => {
+    burger.all((data) =>{
+        let hbsObject = {
+            burgers: data
+          };
+          console.log(hbsObject);
+          res.render('index', hbsObject);
+    });
+    
+});
 
 
 module.exports = router;

@@ -1,11 +1,11 @@
 const connection = require('./connection');
 
 let orm = {
-    selectAll: (table) =>{
+    selectAll: (table,cb) =>{
         let queryString = 'SELECT * FROM ??';
         connection.query(queryString, [table], (err, data)=>{
             if(err) throw err;
-            return result;
+            cb(data);
         });
     },
     //takes an array values and a table name
