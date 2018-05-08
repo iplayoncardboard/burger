@@ -1,5 +1,5 @@
 $(function() {
-    $('.clean').on('click', (event)=>{
+    $('.eatButton').on('click',  function (event){
         console.log("THIS: "+ this);
         let id = $(this).data('id');
         console.log("ID TO Pass: "+ id);
@@ -8,13 +8,12 @@ $(function() {
             devoured: true
         }
          // Send the PUT request.
-        $.ajax('/api/burgers'+id, {
+        $.ajax('/api/burgers/'+id, {
                 type: 'PUT',
                 data: devourIt
             }).then(()=>{
                 location.reload();
         });
-        
     }); 
 
     $(".burger-form").on("submit", (event) => {

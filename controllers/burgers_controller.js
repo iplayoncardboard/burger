@@ -21,10 +21,10 @@ router.post('/api/burgers', (req,res)=>{
     });
 });
 
-router.put("/api/burgers/:id", (req, res) => {
+router.put("/api/burgers/:id", function(req, res) {
   //burgerName,devValue,id,cb
     console.log("PUT ID: "+ req.params.id);
-    console.log("BODY TXT: "+ res.body.text)
+    console.log("BODY TXT: "+ req.body.text);
     // burger.update( res.body.text , condition, (result) => {
     //   if (result.changedRows == 0) {
     //     // If no rows were changed, then the ID must not exist, so 404
