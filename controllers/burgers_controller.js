@@ -16,10 +16,24 @@ router.get('/', (req,res) => {
 
 router.post('/api/burgers', (req,res)=>{
     // console.log(req.body.burger_name);
-    burger.make(req.body.burger_name,()=>{
+    burger.make(req.body.burger_name,(result)=>{
     res.json({ id: result.insertId });
-    })
+    });
 });
+
+router.put("/api/burgers/:id", (req, res) => {
+  //burgerName,devValue,id,cb
+    console.log("PUT ID: "+ req.params.id);
+    console.log("BODY TXT: "+ res.body.text)
+    // burger.update( res.body.text , condition, (result) => {
+    //   if (result.changedRows == 0) {
+    //     // If no rows were changed, then the ID must not exist, so 404
+    //     return res.status(404).end();
+    //   } else {
+    //     res.status(200).end();
+    //   }
+    // });
+  });
 
 
 module.exports = router;

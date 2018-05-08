@@ -11,6 +11,11 @@ let burger = {
         orm.insertOne(value, (res)=>{
             hollaBack(res);
         });
+    },
+    update: (burgerName,devValue,id,cb)=> {
+        orm.updateOne("burgers",'burger_name',burgerName,devValue,id,(res)=>{
+            cb(res);
+        });
     }
 
 }

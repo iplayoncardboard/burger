@@ -19,7 +19,7 @@ let orm = {
         });
 
     },
-    updateOne: (table,column,burger, devoured,id) => {
+    updateOne: (table,column,burger, devoured,id,cb) => {
         let queryString = "UPDATE ?? SET burger_name = ??, devoured = ?? WHERE id = ??"
 
         [table,column,burger, devoured,id]

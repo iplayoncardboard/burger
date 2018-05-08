@@ -1,8 +1,9 @@
-$(()=>{
+$(function() {
     $('.clean').on('click', (event)=>{
-        console.log("clean clicked");
+        console.log("THIS: "+ this);
         let id = $(this).data('id');
-        
+        console.log("ID TO Pass: "+ id);
+
         let devourIt = {
             devoured: true
         }
