@@ -12,8 +12,8 @@ let burger = {
             hollaBack(res);
         });
     },
-    update: (burgerName,devValue,id,cb)=> {
-        orm.updateOne("burgers",'burger_name',burgerName,devValue,id,(res)=>{
+    update: (devValue,id,cb)=> {
+        orm.updateOne(devValue,id,(res)=>{
             cb(res);
         });
     }

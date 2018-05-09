@@ -19,10 +19,22 @@ let orm = {
         });
 
     },
-    updateOne: (table,column,burger, devoured,id,cb) => {
-        let queryString = "UPDATE ?? SET burger_name = ??, devoured = ?? WHERE id = ??"
+    updateOne: (devoured,id,cb) => {
+        // console.log("ORM IS DEVOWERING"+ devoured);
+        
+        let boolz = 0;
+        if(devoured){
+            boolz = 1;
+        }
+        let queryString = "UPDATE burgers SET devoured = ? WHERE id = ?"
 
-        [table,column,burger, devoured,id]
+        connection.query(queryString,[boolz,id],(err, data)=>{
+            if(err){
+                console.log('ORM ERROR: '+ err)
+            } 
+            cb(data);
+        });
+
     }
 };
 

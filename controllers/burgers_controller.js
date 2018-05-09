@@ -24,15 +24,15 @@ router.post('/api/burgers', (req,res)=>{
 router.put("/api/burgers/:id", function(req, res) {
   //burgerName,devValue,id,cb
     console.log("PUT ID: "+ req.params.id);
-    console.log("BODY TXT: "+ req.body.text);
-    // burger.update( res.body.text , condition, (result) => {
-    //   if (result.changedRows == 0) {
-    //     // If no rows were changed, then the ID must not exist, so 404
-    //     return res.status(404).end();
-    //   } else {
-    //     res.status(200).end();
-    //   }
-    // });
+    console.log("BODY TXT: "+ req.body.devoured);
+    burger.update( req.body.devoured , req.params.id, (result) => {
+      if (result.changedRows == 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      } else {
+        res.status(200)
+      }
+    });
   });
 
 
