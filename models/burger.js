@@ -14,7 +14,8 @@ let burger = {
     },
     update: (devValue,id,cb)=> {
         orm.updateOne(devValue,id,(res)=>{
-            cb(res);
+           
+            cb(res,  console.log("Hollaback from: model"));
         });
     }
 

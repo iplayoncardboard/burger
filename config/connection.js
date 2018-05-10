@@ -1,18 +1,18 @@
-import { create } from 'domain';
+
 
 const mysql = require('mysql');
 
 
-if(process.env.JASDB_URL){
-  connection = mysql.createConnection(process.env.JAWSDB_URL)
+if(process.env.JAWSDB_URL){
+  let connection = mysql.createConnection(process.env.JAWSDB_URL)
 }
+
 else{
 let connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : '',
     database : 'burgers_db'
-
 });
 }
 

@@ -21,10 +21,10 @@ let orm = {
     },
     updateOne: (devoured,id,cb) => {
         // console.log("ORM IS DEVOWERING"+ devoured);
-        
-        let boolz = 0;
+
+        let boolz = false;
         if(devoured){
-            boolz = 1;
+            boolz = true;
         }
         let queryString = "UPDATE burgers SET devoured = ? WHERE id = ?"
 
