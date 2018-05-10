@@ -15,13 +15,21 @@ form {
 }
 
 .new_burger{
+    margin-top: 25px;
     background-color: #ffffff;
 }
 
 .eaten_burger{
+    margin-top: 25px;
     background-color: #ffffff;
 }
 
 .form_col{
     padding-top: 25px;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
