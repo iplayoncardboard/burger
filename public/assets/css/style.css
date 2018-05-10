@@ -1,3 +1,27 @@
+body{    
+    background-color: bisque;
+}
+
 h1{
-    color: red
+    text-align: center;
+}
+
+li{
+    list-style-type: none;
+}
+
+form {
+    text-align: center;
+}
+
+.new_burger{
+    background-color: #ffffff;
+}
+
+.eaten_burger{
+    background-color: #ffffff;
+}
+
+.form_col{
+    padding-top: 25px;
 }
