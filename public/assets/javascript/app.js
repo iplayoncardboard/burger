@@ -31,6 +31,7 @@ $(function() {
         }).then(
           function() {
             //reload page
+            console.log("Reloading Page")
             location.reload();
           }
         );
